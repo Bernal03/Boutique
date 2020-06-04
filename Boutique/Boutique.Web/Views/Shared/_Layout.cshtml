@@ -4,40 +4,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="@Url.Action("Index", "Principal")">Boutique</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkred">
+        <a class="navbar-brand text-white" href="@Url.Action("Index", "Principal")">Boutique</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index","Home")">Inicio <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index","Home")">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("About", "Home")">Acerca de</a>
+                    <a class="nav-link text-white" href="@Url.Action("About", "Home")">Acerca de</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Contact", "Home")">Contacto</a>
+                    <a class="nav-link text-white" href="@Url.Action("Contact", "Home")">Contacto</a>
                 </li>
             </ul>
-            <span class="navbar-text">
-                <a href="@Url.Action("Register","Account")" style="text-decoration:none">Registro</a> |
-                <a href="@Url.Action("Login","Account")" style="text-decoration:none">Iniciar Sesión</a>
+            <span class="navbar-text text-white">
+                @Html.Partial("_LoginPartial")
             </span>
         </div>
     </nav>
-    <div class="container body-content">
+    <div>
         @RenderBody()
-        <hr />
+        <hr style="color:black"/>
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p style="text-align:center">&copy; @DateTime.Now.Year Boutique - Proyecto de Bernal y Valadez</p>
         </footer>
     </div>
 
